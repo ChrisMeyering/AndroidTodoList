@@ -3,6 +3,7 @@ package chris.meyering.todolist.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import chris.meyering.todolist.MainActivity
 import chris.meyering.todolist.R
@@ -35,8 +36,10 @@ class LoginActivity : AppCompatActivity() {
     private fun login(email: String, password: String) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) {
             if (it.isSuccessful) {
+                Log.d("LoginActivity", "signInWithEmailAndPassword:success")
                 startActivity(Intent(baseContext, MainActivity::class.java))
             } else {
+                Log.d("LoginActivity", "signInWithEmailAndPassword:failure", it.exception)
                 Toast.makeText(baseContext, "Failed to authenticate.", Toast.LENGTH_SHORT).show()
             }
         }

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.LoginActivity"
@@ -43,6 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:counterTextAppearance="@style/ErrorCounter"
+        app:counterOverflowTextAppearance="@style/CorrectCounter"
         app:layout_constraintTop_toBottomOf="@id/til_register_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -61,6 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:counterEnabled="true"
+        app:counterMaxLength="6"
+        app:counterTextAppearance="@style/ErrorCounter"
+        app:counterOverflowTextAppearance="@style/CorrectCounter"
         app:layout_constraintTop_toBottomOf="@id/til_register_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">

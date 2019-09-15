@@ -30,10 +30,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        val currentUser: FirebaseUser? = mAuth.currentUser
+        val currentUser: FirebaseUser? = mAuth.currentUser
+        if (currentUser != null) {
+            updateUI(currentUser)
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+    }
+
+    private fun updateUI(user: FirebaseUser) {
+
     }
 
 
+    override fun onBackPressed() {
+        finish()
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
